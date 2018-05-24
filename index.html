@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+			<link rel="stylesheet" href="css/styles.css">
+
+
+    </head>
+
+    <body class="bodyIndex">
+
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">NORTH</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Project Website</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Publication</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Github</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contributors</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container-fluid banner" style="padding-top:80px;padding-bottom:3%">
+				<h1>NORTH</h1>
+				<h2>a Naive bayes based ORTHologous gene clustering algorithm</h2>
+		</div>
+		
+		<div class="container-fluid formContainer">
+				<div class="row">
+
+					<div class="col-sm-12 col-lg-6">
+
+							<h4>
+								Input Gene Sequence
+							</h4>
+						
+							<form action="#">
+								<p>
+									<label>
+										<input name="group1" type="radio" id="radio1" checked onclick="rdoBtn(this.id)" />
+											<span style="color:black;font-size: 150%;">Protein Sequence</span>
+									</label>
+									
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label><input name="group1" type="radio" id="radio2" onclick="rdoBtn(this.id)"/>
+										<span style="color:black;font-size: 150%;">Fasta</span></label>
+									<div class="form-group">							
+										<textarea class="form-control" id="sequenceArea" placeholder="MIPYVNEYDTPECKTLAETAKKSIRTPASLGLDRCIQCGACTASCPAARFTDYSPRQIVKKVLENDRSVLESEMIWSCFYCYSCNLRCPRNNSPVTIVQVLRQMAINEGIGVEKLAYFLEIGEYLAENGASKIPGPGAKNMERDLGERWISFKKNLESIRDELGLSSKDIRNTHGEVQAILEATGYFEREKWIKAKIQEKLLHQLLENQYIKRENRSGDFGFENDRRYPGQPAFII"></textarea>
+									</div>
+								</p>
+								<p>
+									<label>
+										<input name="group1" type="radio" id="radio3" onclick="rdoBtn(this.id)"/>
+											<span style="color:black;font-size: 150%;">Upload Fasta File</span>
+									</label>
+										<div class="file-field input-field">
+											<div class="btn">
+												<span>File</span>
+												<input type="file">
+											</div>
+											<div class="file-path-wrapper">
+												<input class="file-path validate" type="text">
+											</div>
+										</div>									
+								</p>								
+							</form>
+
+					</div>
+
+					<div class="col-sm-12 col-lg-6">
+
+						<h4>
+							Select a Family <a data-toggle="popover" data-placement="top" data-content="Select the appropriate species family. If you're not sure select 'ALL'"><i class="far fa-question-circle"></i></a>
+						</h4>
+						
+						<div class="container-fluid">
+							<table>
+								<tr>
+									<td>
+										<a class="waves-effect waves-light btn-large" id="Eukaryotes" onclick="fmlyBtn(this.id)">Eukaryotes</a>
+									</td>
+
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="Prokaryotes" onclick="fmlyBtn(this.id)">Prokaryotes</a>
+									</td>
+
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="Animals" onclick="fmlyBtn(this.id)">Animals</a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="Plants" onclick="fmlyBtn(this.id)">Plants</a>
+									</td>
+
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="Fungi" onclick="fmlyBtn(this.id)">Fungi</a>
+									</td>
+
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="Protists" onclick="fmlyBtn(this.id)">Protists</a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="Bacteria" onclick="fmlyBtn(this.id)">Bacteria</a>
+									</td>
+
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="Archaea" onclick="fmlyBtn(this.id)">Archaea</a>		
+									</td>
+
+									<td>
+										<a class="waves-effect waves-teal btn-large btn-flat" id="All" onclick="fmlyBtn(this.id)">All</a>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+						<h4 style="margin-top:5%;margin-bottom:5%">
+							Select Number of Classes <a data-toggle="popover" data-placement="top" data-content="Currently we support only the following number of classes: 10, 50, 100, 150, 200. To try other ones please run our source code from github"><i class="far fa-question-circle"></i></a>
+						</h4>
+
+						  
+
+						
+						<form action="#">
+							<p class="range-field">
+								<input type="range" id="slider" min="10" max="200" value=10 onmouseup="rangeSlide()"/>
+							</p>
+						</form>
+
+						<a style="width: 100px" class="waves-effect waves-light btn-large" id="sliderValue">10</a>
+						<a class="waves-effect waves-light btn-large" data-toggle="popover" data-placement="right" data-content="Currently we support only K = 5. To try other ones please run our source code from github">K = 5</a>
+					</div>
+
+				</div>
+		</div>
+
+		<button style="margin-left: 45%;margin-bottom:4%;margin-top:1%" class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
+			<i class="material-icons right">send</i>
+		</button>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+		<script src="js/index.js"></script>
+
+		<footer class="page-footer">
+				<div class="container" style="padding-bottom:30px;">
+								
+				</div>	
+		</footer>
+    </body>
+
+</html>
